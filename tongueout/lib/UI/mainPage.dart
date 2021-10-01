@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tongueout/UI/login/loginMain.dart';
 import 'package:tongueout/UI/register/registerMain.dart';
 
 class MainPageLoginOrRegister extends StatelessWidget{
@@ -79,7 +80,7 @@ class MainPageLoginOrRegister extends StatelessWidget{
               side: BorderSide(width: 1, color: Colors.red,)
               ),
               onPressed: (){
-
+                Navigator.push(context, CupertinoPageRoute(builder: (context)=>LoginMainPage()));
               }, child: Center(child: Text("ALREADY HAVE AN ACCOUNT",style: TextStyle(fontSize: size.height/65,color:Theme.of(context).primaryColor),),)),
               ),
               SizedBox(height: size.height/15,),
