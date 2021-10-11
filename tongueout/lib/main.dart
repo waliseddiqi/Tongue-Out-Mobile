@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         
-        primarySwatch: getColor(Color(0xffff5252)),
+        primaryColor: getColor(Color(0xffff5252)),
+        primarySwatch:  getColor(Color(0xffff5252)),
       ),
       home:MainPageLoginOrRegister()
     );

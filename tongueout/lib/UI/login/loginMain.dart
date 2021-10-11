@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stacked/stacked.dart';
+import 'package:tongueout/UI/homepage/homePage.dart';
 import 'package:tongueout/viewModels/login_view_model.dart';
 import 'package:tongueout/viewModels/registerViewModels/register_main_view_model.dart';
 
@@ -66,7 +67,7 @@ class LoginMainPage extends StatelessWidget{
                 side: BorderSide(width: 1, color: Colors.red,)
                 ),
                 onPressed: (){
-                  Navigator.push(context, CupertinoPageRoute(builder: (context)=>LoginMainPage()));
+                  Navigator.push(context, CupertinoPageRoute(builder: (context)=>HomePage()));
                 }, child: Center(child: Text("LOGIN",style: TextStyle(fontSize: size.height/60,color:Colors.white,fontWeight: FontWeight.w600),),)),
               ),
               ),
