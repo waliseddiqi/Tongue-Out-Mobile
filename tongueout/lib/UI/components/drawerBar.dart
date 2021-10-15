@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tongueout/UI/FollowPages/followersPage.dart';
+import 'package:tongueout/UI/questions/myQuestions.dart';
 
 class DrawerBar extends StatelessWidget{
   @override
@@ -19,11 +20,22 @@ class DrawerBar extends StatelessWidget{
                  currentAccountPicture: Container(child: Icon(Icons.account_circle,size: size.height/10,color: Colors.white,),),
                  accountName:Text("Wali Seddiqi"), accountEmail: Text("waliseddiqi4@gmail.com")),
      
-                DrawerItems("home.svg","HOME"),
-                DrawerItems("settings.svg","SETTINGS"),
-                DrawerItems("questions.svg","MY QUESTIONS"),
-                DrawerItems("questions.svg","MY EXAMS"),
-                DrawerItems("questions.svg","MY FOLLOWERS")
+                DrawerItems("home.svg","HOME",(){
+
+                }),
+                DrawerItems("settings.svg","SETTINGS",(){
+
+                }),
+                DrawerItems("questions.svg","MY QUESTIONS",(){
+                   Navigator.push(context, CupertinoPageRoute(builder: (context)=>MyQuestions()));
+
+                }),
+                DrawerItems("questions.svg","MY EXAMS",(){
+
+                }),
+                DrawerItems("questions.svg","MY FOLLOWERS",(){
+                   Navigator.push(context, CupertinoPageRoute(builder: (context)=>FollowersPage()));
+                })
              ],
            ),
      
@@ -37,7 +49,8 @@ class DrawerBar extends StatelessWidget{
 class DrawerItems extends StatelessWidget{
   final String image;
   final String text;
-  DrawerItems(this.image,this.text);
+  final Function onTap;
+  DrawerItems(this.image,this.text,this.onTap);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -46,7 +59,7 @@ class DrawerItems extends StatelessWidget{
      highlightColor: Colors.red,
      
      onTap: (){
-       Navigator.push(context, CupertinoPageRoute(builder: (context)=>FollowersPage()));
+      onTap();
      },
      child: Padding(
        padding:  EdgeInsets.all(size.height/180),
